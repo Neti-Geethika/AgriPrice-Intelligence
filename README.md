@@ -24,30 +24,29 @@ sell, and what will I get for it?*
 - ~19,373 cleaned records spanning 2024–2026
 
 ## Architecture
+
+```
 Agmarknet API (data.gov.in)
-│
+        |
 Data Cleaning & Validation (Python, Pandas)
-│
-EDA — trends, seasonality, market spread
-│
-Feature Engineering — lag price, rolling average, season, day-of-week
-│
+        |
+EDA -- trends, seasonality, market spread
+        |
+Feature Engineering -- lag price, rolling average, season, day-of-week
+        |
 ML Price Prediction (Linear Regression, Random Forest, XGBoost compared)
-│
+        |
 SHAP Explainability
-│
-┌────┴─────────────────────────┐
-│ │
-Volatility Scoring Anomaly Detection
-│ │
-└────┬─────────────────────────┘
-│
+        |
+Volatility Scoring  +  Anomaly Detection
+        |
 Market Recommendation Engine
-│
-┌────┴──────────────────────────┐
-│ │
-Power BI Dashboard Streamlit Farmer App
-(6-page analyst view) (live price + recommendation)
+        |
+Power BI Dashboard   <-->   Streamlit Farmer App
+(6-page analyst view)       (live price + recommendation)
+```
+
+
 ## Model Performance
 
 | Model | MAE | RMSE | R² |
