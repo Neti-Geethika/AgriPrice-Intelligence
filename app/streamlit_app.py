@@ -186,7 +186,11 @@ volatility_df = load_volatility()
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import API_KEY
+try:
+    from config import API_KEY
+except ImportError:
+    import streamlit as st
+    API_KEY = st.secrets["API_KEY"]
 BASE_URL = "https://api.data.gov.in/resource/35985678-0d79-46b4-9ed6-6f13308a1d24"
 HEADERS = {'User-Agent': 'Mozilla/5.0'}
 
